@@ -16,23 +16,26 @@ unsub = cacheFirestore({
     query,
     proxy,
     unsub,
-});
+}, dependencies);
 ```
 
 ### API:
 
 ```
-query: Firestore Query,
-store: Object or Proxy,
-proxy: Object or Proxy,
-listKey = 'list',
-idKey = 'id',
-idKeyOnData = false: `true` if `idKey` is on doc.data(),
-loadingKey = 'loading',
-errorKey = 'error',
-unsub: unsubscribe function,
-autoUnsub = true: `false` if you want to unsubscribe manually,
-devMode = false: `true` if you want to log the changes,
+{
+    query: Firestore Query,
+    store: Object or Proxy,
+    proxy: Object or Proxy,
+    listKey = 'list',
+    idKey = 'id',
+    idKeyOnData = false: `true` if `idKey` is on doc.data(),
+    loadingKey = 'loading',
+    errorKey = 'error',
+    unsub: unsubscribe function,
+    autoUnsub = true: `false` if you want to unsubscribe manually,
+    devMode = false: `true` if you want to log the changes,
+},
+dependencies = [] | null | undefined: array of dependencies to trigger the query,
 ```
 
 ### Example:
@@ -63,9 +66,11 @@ subscribeKey(stateProxy, 'user', (user) => {
 ```
 
 ### License:
+
 MIT
 
 ### Author:
+
 [ClassFunc Softwares JSC](https://classfunc.com)
     
 
