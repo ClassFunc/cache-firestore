@@ -43,7 +43,8 @@ const beUpdated = (query, dependencies) => {
 const cacheFirestore = (
     {
         query,
-        store = {},
+        store,
+        proxy,
         listKey = 'list',
         idKey = 'id',
         idKeyOnData = false,
@@ -69,6 +70,7 @@ const cacheFirestore = (
         unsub?.();
     }
 
+    store = store ?? proxy ?? {};
     store[loadingKey] = true;
     unsub = onSnapshot(
         query,
