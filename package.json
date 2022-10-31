@@ -7,5 +7,11 @@
     "firebase": "^9"
   },
   "license": "MIT",
-  "homepage": "https://github.com/classfunc/cache-firestore#readme"
+  "homepage": "https://github.com/classfunc/cache-firestore#readme",
+  "keywords": [
+    "cache",
+    "firestore",
+    "firebase",
+    "cache-firestore"
+  ]
 }
